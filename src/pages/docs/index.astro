@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const guides = (await getCollection("docs")).sort((a, b) => a.data.order - b.data.order);
+const groups = ["Getting started", "Integrations"] as const;
+---
+
+<BaseLayout
+  title="Documentation"
+  description="Setup and integration guides for Budgeted."
+  current="docs"
+>
+  <section class="docs-hero">
+    <div class="shell narrow-shell">
+      <p class="eyebrow">Documentation</p>
+      <h1>Set up Budgeted your way.</h1>
+      <p class="lede">Installation and integration guides are on the way. Their permanent homes are ready now.</p>
+    </div>
+  </section>
+
+  <section class="docs-directory">
+    <div class="shell narrow-shell docs-groups">
+      {groups.map((group) => (
+        <div class="docs-group">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">{group}</p>
+            <span>{guides.filter((guide) => guide.data.group === group).length.toString().padStart(2, "0")}</span>
+          </div>
+          <div class="docs-list">
+            {guides.filter((guide) => guide.data.group === group).map((guide) => (
+              <a class="doc-card" href={`/docs/${guide.id}/`}>
+                <div>
+                  <h2>{guide.data.title}</h2>
+                  <p>{guide.data.description}</p>
+                </div>
+                <span class="doc-state">Coming soon</span>
+                <span class="doc-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

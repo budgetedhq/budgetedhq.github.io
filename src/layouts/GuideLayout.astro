@@ -1,0 +1,26 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} current="docs">
+  <section class="guide-hero">
+    <div class="shell guide-shell">
+      <a class="back-link" href="/docs/"><span aria-hidden="true">←</span> All documentation</a>
+      <div class="status-label"><span aria-hidden="true"></span> Guide coming soon</div>
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+      <div class="guide-notice">
+        <p class="eyebrow">In progress</p>
+        <h2>We’re preparing this guide.</h2>
+        <p>It will include clear, step-by-step instructions when it is ready. No setup is required from this page yet.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

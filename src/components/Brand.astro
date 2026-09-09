@@ -1,0 +1,36 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<a class:list={["brand", { compact }]} href="/" aria-label="Budgeted home">
+  <svg aria-hidden="true" viewBox="0 0 32 32" role="img">
+    <path d="M5 5.5h21.25a1.75 1.75 0 0 1 0 3.5H6.5A2.5 2.5 0 0 0 4 11.5v11A4.5 4.5 0 0 0 8.5 27H27a2 2 0 0 0 2-2V13a2 2 0 0 0-2-2H7a3 3 0 0 1-2-5.5Z" />
+    <circle cx="24" cy="19" r="2" />
+  </svg>
+  <span>Budgeted</span>
+</a>
+
+<style>
+  .brand {
+    align-items: center;
+    display: inline-flex;
+    font-size: 1.25rem;
+    font-weight: 650;
+    gap: 0.7rem;
+    letter-spacing: -0.03em;
+  }
+
+  svg {
+    fill: var(--accent-bright);
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .compact span {
+    font-size: 1.05rem;
+  }
+</style>

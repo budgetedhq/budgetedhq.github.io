@@ -1,0 +1,21 @@
+---
+import Brand from "./Brand.astro";
+
+interface Props {
+  current?: "home" | "docs";
+}
+
+const { current } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <Brand />
+    <nav aria-label="Primary navigation">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#features">Features</a>
+      <a class:list={[{ active: current === "docs" }]} href="/docs/">Documentation</a>
+      <a class="github-link" href="https://github.com/budgetedhq/budgeted">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
