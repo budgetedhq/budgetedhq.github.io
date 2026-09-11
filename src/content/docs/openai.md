@@ -1,9 +1,9 @@
 ---
 title: Add an OpenAI API key
-description: Add an OpenAI API key for AI-assisted transaction classification suggestions.
+description: Add an OpenAI API key to get category suggestions for your transactions.
 group: Integrations
 order: 4
 status: coming-soon
 ---
 
-This guide is being prepared.
+This guide is coming soon.

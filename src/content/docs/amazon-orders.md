@@ -1,9 +1,9 @@
 ---
 title: Connect Amazon Orders
-description: Configure the Amazon Order scraper to add purchase details and matching suggestions.
+description: Add Amazon order details and get suggestions for matching them to transactions.
 group: Integrations
 order: 3
 status: coming-soon
 ---
 
-This guide is being prepared.
+This guide is coming soon.

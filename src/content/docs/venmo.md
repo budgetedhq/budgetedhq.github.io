@@ -1,9 +1,9 @@
 ---
 title: Connect Venmo
-description: Configure Venmo email ingestion and connect imported payment activity to your ledger.
+description: Import Venmo payments into your ledger from email notifications.
 group: Integrations
 order: 2
 status: coming-soon
 ---
 
-This guide is being prepared.
+This guide is coming soon.
